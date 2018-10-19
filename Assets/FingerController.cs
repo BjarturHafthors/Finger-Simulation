@@ -34,6 +34,8 @@ public class FingerController : MonoBehaviour
         
         fingertip.transform.position = new Vector3(fingertip.transform.position.x + dp.GetComponent<SpriteRenderer>().bounds.size.x / 2, fingertip.transform.position.y);*/
 
+        updatePIPJ();
+        updateDIPJ();
         updateFingertip();
     }
 
