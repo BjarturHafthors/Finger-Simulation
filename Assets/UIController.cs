@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour
     public Slider PPSlider;
     public Slider IPSlider;
     public Slider DPSlider;
+    public Text PIPJValue;
+    public Text DIPJValue;
     public Text fingertipValue;
     public Toggle independent;
     public Text DPMinText;
@@ -45,6 +47,16 @@ public class UIController : MonoBehaviour
     public void updateDPSlider(float value)
     {
         DPSlider.value = value;
+    }
+
+    public void UpdatePIPJValue(float x, float y)
+    {
+        PIPJValue.text = "(" + x.ToString("F1") + "," + y.ToString("F1") + ")";
+    }
+
+    public void UpdateDIPJValue(float x, float y)
+    {
+        DIPJValue.text = "(" + x.ToString("F1") + "," + y.ToString("F1") + ")";
     }
 
     public void UpdateFingertipValue(float x, float y)

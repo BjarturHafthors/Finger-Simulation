@@ -40,6 +40,9 @@ public class FingerController : MonoBehaviour
     public void PPChanged(float value)
     {
         mcpj.transform.eulerAngles = new Vector3(0, 0, value);
+
+        updatePIPJ();
+        updateDIPJ();
         updateFingertip();
     }
 
@@ -53,7 +56,8 @@ public class FingerController : MonoBehaviour
             dipj.transform.localEulerAngles = new Vector3(0, 0, dpValue);
             uiController.updateDPSlider(dpValue);
         }
-        
+
+        updateDIPJ();
         updateFingertip();
     }
 
@@ -69,6 +73,16 @@ public class FingerController : MonoBehaviour
         }
         
         updateFingertip();
+    }
+
+    private void updatePIPJ()
+    {
+        uiController.UpdatePIPJValue(pipj.transform.position.x, pipj.transform.position.y);
+    }
+
+    private void updateDIPJ()
+    {
+        uiController.UpdateDIPJValue(dipj.transform.position.x, dipj.transform.position.y);
     }
 
     private void updateFingertip()
