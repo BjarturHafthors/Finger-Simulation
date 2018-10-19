@@ -73,8 +73,12 @@ public class FingerController : MonoBehaviour
 
     private void updateFingertip()
     {
-        //float x = ppSize * Mathf.Cos(mcpj.transform.localEulerAngles.z) + ipSize * Mathf.Cos(pipj.transform.localEulerAngles.z) + dpSize * Mathf.Cos(dipj.transform.localEulerAngles.z);
-        //float y = ppSize * Mathf.Sin(mcpj.transform.localEulerAngles.z) + ipSize * Mathf.Sin(pipj.transform.localEulerAngles.z) + dpSize * Mathf.Sin(dipj.transform.localEulerAngles.z);
+        /*float degreeToRadianConsant = Mathf.PI / 180;
+        float x = ppSize * Mathf.Cos(mcpj.transform.eulerAngles.z * degreeToRadianConsant) + ipSize * Mathf.Cos(pipj.transform.eulerAngles.z * degreeToRadianConsant) + dpSize * Mathf.Cos(dipj.transform.eulerAngles.z * degreeToRadianConsant);
+        float y = ppSize * Mathf.Sin(mcpj.transform.eulerAngles.z * degreeToRadianConsant) + ipSize * Mathf.Sin(pipj.transform.eulerAngles.z * degreeToRadianConsant) + dpSize * Mathf.Sin(dipj.transform.eulerAngles.z * degreeToRadianConsant);
+
+        Debug.Log("Equations: (" + x.ToString("F1") + "," + y.ToString("F1") + ")");
+        Debug.Log("Actual: (" + fingertip.transform.position.x.ToString("F1") + "," + fingertip.transform.position.y.ToString("F1") + ")");*/
 
         uiController.UpdateFingertipValue(fingertip.transform.position.x, fingertip.transform.position.y);
     }
