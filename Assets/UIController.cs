@@ -13,6 +13,10 @@ public class UIController : MonoBehaviour
     public Toggle independent;
     public Text DPMinText;
 
+    public Text PPValue;
+    public Text IPValue;
+    public Text DPValue;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -22,21 +26,28 @@ public class UIController : MonoBehaviour
         IPSlider.minValue = -120;
         DPSlider.maxValue = 0;
         DPSlider.minValue = -120;
+
+        PPValue.text = PPSlider.value.ToString();
+        IPValue.text = IPSlider.value.ToString();
+        DPValue.text = DPSlider.value.ToString();
 	}
 	
     public void PPChanged()
     {
         fingerController.PPChanged(PPSlider.value);
+        PPValue.text = PPSlider.value.ToString();
     }
 
     public void IPChanged()
     {
         fingerController.IPChanged(IPSlider.value, independent.isOn);
+        IPValue.text = IPSlider.value.ToString();
     }
 
     public void DPChanged()
     {
         fingerController.DPChanged(DPSlider.value, independent.isOn);
+        DPValue.text = DPSlider.value.ToString();
     }
 
     public void updateIPSlider(float value)
