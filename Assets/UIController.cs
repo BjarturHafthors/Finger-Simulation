@@ -17,6 +17,9 @@ public class UIController : MonoBehaviour
     public Text IPValue;
     public Text DPValue;
 
+    public InputField xValue;
+    public InputField yValue;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -50,14 +53,22 @@ public class UIController : MonoBehaviour
         DPValue.text = DPSlider.value.ToString();
     }
 
+    public void updatePPSlider(float value)
+    {
+        PPSlider.value = value;
+        PPValue.text = value.ToString();
+    }
+
     public void updateIPSlider(float value)
     {
         IPSlider.value = value;
+        IPValue.text = value.ToString();
     }
 
     public void updateDPSlider(float value)
     {
         DPSlider.value = value;
+        DPValue.text = value.ToString();
     }
 
     public void UpdatePIPJValue(float x, float y)
@@ -90,5 +101,20 @@ public class UIController : MonoBehaviour
             fingerController.DPChanged(newDPValue, false);
             DPMinText.text = "-80";
         }
+    }
+
+    public bool isIndependent()
+    {
+        return independent.isOn;
+    }
+
+    public float getXInput()
+    {
+        return float.Parse(xValue.text);
+    }
+
+    public float getYInput()
+    {
+        return float.Parse(yValue.text);
     }
 }

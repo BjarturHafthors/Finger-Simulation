@@ -89,13 +89,25 @@ public class FingerController : MonoBehaviour
 
     private void updateFingertip()
     {
-        /*float degreeToRadianConsant = Mathf.PI / 180;
-        float x = ppSize * Mathf.Cos(mcpj.transform.eulerAngles.z * degreeToRadianConsant) + ipSize * Mathf.Cos(pipj.transform.eulerAngles.z * degreeToRadianConsant) + dpSize * Mathf.Cos(dipj.transform.eulerAngles.z * degreeToRadianConsant);
-        float y = ppSize * Mathf.Sin(mcpj.transform.eulerAngles.z * degreeToRadianConsant) + ipSize * Mathf.Sin(pipj.transform.eulerAngles.z * degreeToRadianConsant) + dpSize * Mathf.Sin(dipj.transform.eulerAngles.z * degreeToRadianConsant);
+        /*float degreeToRadianConstant = Mathf.PI / 180;
+        float x = ppSize * Mathf.Cos(mcpj.transform.eulerAngles.z * degreeToRadianConstant) + ipSize * Mathf.Cos(pipj.transform.eulerAngles.z * degreeToRadianConstant) + dpSize * Mathf.Cos(dipj.transform.eulerAngles.z * degreeToRadianConstant);
+        float y = ppSize * Mathf.Sin(mcpj.transform.eulerAngles.z * degreeToRadianConstant) + ipSize * Mathf.Sin(pipj.transform.eulerAngles.z * degreeToRadianConstant) + dpSize * Mathf.Sin(dipj.transform.eulerAngles.z * degreeToRadianConstant);
 
         Debug.Log("Equations: (" + x.ToString("F1") + "," + y.ToString("F1") + ")");
         Debug.Log("Actual: (" + fingertip.transform.position.x.ToString("F1") + "," + fingertip.transform.position.y.ToString("F1") + ")");*/
 
         uiController.UpdateFingertipValue(fingertip.transform.position.x, fingertip.transform.position.y);
+    }
+
+    public float getXFromDegrees(int i, int j, int k)
+    {
+        float degreeToRadianConstant = Mathf.PI / 180;
+        return ppSize * Mathf.Cos(i * degreeToRadianConstant) + ipSize * Mathf.Cos((i+j) * degreeToRadianConstant) + dpSize * Mathf.Cos((i+j+k) * degreeToRadianConstant);
+    }
+
+    public float getYFromDegrees(int i, int j, int k)
+    {
+        float degreeToRadianConstant = Mathf.PI / 180;
+        return ppSize * Mathf.Sin(i * degreeToRadianConstant) + ipSize * Mathf.Sin((i+j) * degreeToRadianConstant) + dpSize * Mathf.Sin((i+j+k) * degreeToRadianConstant);
     }
 }
