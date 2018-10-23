@@ -55,8 +55,8 @@ public class FingerController : MonoBehaviour
         if (!independent)
         {
             float dpValue = (2 * value) / 3;
-            dipj.transform.localEulerAngles = new Vector3(0, 0, dpValue);
             uiController.updateDPSlider(dpValue);
+            dipj.transform.localEulerAngles = new Vector3(0, 0, dpValue);
         }
 
         updateDIPJ();

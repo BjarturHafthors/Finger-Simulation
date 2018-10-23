@@ -19,6 +19,8 @@ public class UIController : MonoBehaviour
 
     public InputField xValue;
     public InputField yValue;
+    public InputField mcpjGuess;
+    public InputField pipjGuess;
 
 	// Use this for initialization
 	void Start ()
@@ -71,6 +73,22 @@ public class UIController : MonoBehaviour
         DPValue.text = value.ToString();
     }
 
+    public void setSliderWholeNumbers(bool value)
+    {
+        if (value)
+        {
+            PPSlider.wholeNumbers = true;
+            IPSlider.wholeNumbers = true;
+            DPSlider.wholeNumbers = true;
+        }
+        else
+        {
+            PPSlider.wholeNumbers = false;
+            IPSlider.wholeNumbers = false;
+            DPSlider.wholeNumbers = false;
+        }
+    }
+
     public void UpdatePIPJValue(float x, float y)
     {
         PIPJValue.text = "(" + x.ToString("F1") + "," + y.ToString("F1") + ")";
@@ -116,5 +134,15 @@ public class UIController : MonoBehaviour
     public float getYInput()
     {
         return float.Parse(yValue.text);
+    }
+
+    public float getMCPJGuess()
+    {
+        return float.Parse(mcpjGuess.text);
+    }
+
+    public float getPIPJGuess()
+    {
+        return float.Parse(pipjGuess.text);
     }
 }
