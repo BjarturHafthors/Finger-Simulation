@@ -45,6 +45,8 @@ public class Solver : MonoBehaviour
                 uiController.updateIPSlider(pipjGuess);
                 fingerController.IPChanged(pipjGuess, false);
 
+                Debug.Log("Iterations: " + iterationCounter);
+
                 return;
             }
 
@@ -98,6 +100,9 @@ public class Solver : MonoBehaviour
                 fingerController.PPChanged(mcpjGuess);
                 uiController.updateIPSlider(pipjGuess);
                 fingerController.IPChanged(pipjGuess, false);
+
+
+                Debug.Log("Iterations: " + iterationCounter);
 
                 fingerslideMcpjGuess = mcpjGuess;
                 fingerslidePipjGuess = pipjGuess;
