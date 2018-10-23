@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour
     public InputField yValue;
     public InputField mcpjGuess;
     public InputField pipjGuess;
+    public InputField interval;
 
 	// Use this for initialization
 	void Start ()
@@ -139,6 +140,11 @@ public class UIController : MonoBehaviour
     public float getMCPJGuess()
     {
         return float.Parse(mcpjGuess.text);
+    }
+
+    public float getSlideInterval()
+    {
+        return float.Parse(interval.text);
     }
 
     public float getPIPJGuess()

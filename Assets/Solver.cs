@@ -9,6 +9,7 @@ public class Solver : MonoBehaviour
     float fingerslideMcpjGuess = 30;
     float fingerslidePipjGuess = -20;
     bool fingerslideActive = false;
+    float slideInterval = 1;
 
     public void JacobianIterative()
     {
@@ -129,6 +130,7 @@ public class Solver : MonoBehaviour
     public void fingerslide()
     {
         fingerslideActive = true;
+        slideInterval = uiController.getSlideInterval();
     }
 
 
@@ -139,7 +141,8 @@ public class Solver : MonoBehaviour
             if (x <= 76)
             {
                 JacobianIterative(fingerslideMcpjGuess, fingerslidePipjGuess, x);
-                x++;
+                
+                x += slideInterval;
             }
             else
             {
