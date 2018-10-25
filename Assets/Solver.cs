@@ -35,6 +35,8 @@ public class Solver : MonoBehaviour
 
             float xError = Mathf.Abs(desiredX - currentX);
             float yError = Mathf.Abs(desiredY - currentY);
+            
+            Debug.Log(xError + yError);
 
             if (iterationCounter == 500 || xError + yError < errorThreshold)
             {
